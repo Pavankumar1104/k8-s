@@ -3,8 +3,12 @@ kind: Service
 metadata:
   name: catalog
   labels:
+    helm.sh/chart: catalog-1.3.0
     app.kubernetes.io/name: catalog
+    app.kubernetes.io/instance: catalog
     app.kubernetes.io/component: service
+    app.kubernetes.io/owner: retail-store-sample
+    app.kubernetes.io/managed-by: Helm
 spec:
   type: ClusterIP
   ports:
@@ -14,4 +18,6 @@ spec:
       name: http
   selector:
     app.kubernetes.io/name: catalog
+    app.kubernetes.io/instance: catalog
     app.kubernetes.io/component: service
+    app.kubernetes.io/owner: retail-store-sample
